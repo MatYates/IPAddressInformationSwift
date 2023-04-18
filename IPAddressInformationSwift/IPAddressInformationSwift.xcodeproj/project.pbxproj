@@ -17,6 +17,9 @@
 		FB78481329EE55FC002268FF /* IPAddressAPI in Frameworks */ = {isa = PBXBuildFile; productRef = FB78481229EE55FC002268FF /* IPAddressAPI */; };
 		FB8BC28629EE884700D270EC /* IPAddressDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28529EE884700D270EC /* IPAddressDetailsViewController.swift */; };
 		FB8BC28929EE8ED400D270EC /* IPAddressDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28829EE8ED400D270EC /* IPAddressDetailsViewModel.swift */; };
+		FB8BC28C29EE934A00D270EC /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28B29EE934A00D270EC /* LoadingTableViewCell.swift */; };
+		FB8BC28E29EE935B00D270EC /* FailedLoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28D29EE935B00D270EC /* FailedLoadingTableViewCell.swift */; };
+		FB8BC29129EE95EA00D270EC /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		FB78481029EE55B9002268FF /* IPAddressAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = IPAddressAPI; path = ../IPAddressAPI; sourceTree = "<group>"; };
 		FB8BC28529EE884700D270EC /* IPAddressDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressDetailsViewController.swift; sourceTree = "<group>"; };
 		FB8BC28829EE8ED400D270EC /* IPAddressDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressDetailsViewModel.swift; sourceTree = "<group>"; };
+		FB8BC28B29EE934A00D270EC /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		FB8BC28D29EE935B00D270EC /* FailedLoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedLoadingTableViewCell.swift; sourceTree = "<group>"; };
+		FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		FB7847DB29EE52F9002268FF /* IPAddressInformationSwift */ = {
 			isa = PBXGroup;
 			children = (
+				FB8BC28F29EE95CE00D270EC /* Extensions */,
 				FB8BC28429EE881700D270EC /* ViewControllers */,
 				FB7847DC29EE52F9002268FF /* AppDelegate.swift */,
 				FB7847DE29EE52F9002268FF /* SceneDelegate.swift */,
@@ -157,10 +164,28 @@
 		FB8BC28729EE8EBD00D270EC /* IPAddressDetails */ = {
 			isa = PBXGroup;
 			children = (
+				FB8BC28A29EE924600D270EC /* Cells */,
 				FB8BC28529EE884700D270EC /* IPAddressDetailsViewController.swift */,
 				FB8BC28829EE8ED400D270EC /* IPAddressDetailsViewModel.swift */,
 			);
 			path = IPAddressDetails;
+			sourceTree = "<group>";
+		};
+		FB8BC28A29EE924600D270EC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FB8BC28B29EE934A00D270EC /* LoadingTableViewCell.swift */,
+				FB8BC28D29EE935B00D270EC /* FailedLoadingTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FB8BC28F29EE95CE00D270EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8BC28C29EE934A00D270EC /* LoadingTableViewCell.swift in Sources */,
 				FB7847DD29EE52F9002268FF /* AppDelegate.swift in Sources */,
+				FB8BC28E29EE935B00D270EC /* FailedLoadingTableViewCell.swift in Sources */,
 				FB8BC28929EE8ED400D270EC /* IPAddressDetailsViewModel.swift in Sources */,
+				FB8BC29129EE95EA00D270EC /* UITableViewCell+Extensions.swift in Sources */,
 				FB7847DF29EE52F9002268FF /* SceneDelegate.swift in Sources */,
 				FB8BC28629EE884700D270EC /* IPAddressDetailsViewController.swift in Sources */,
 			);
