@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		FB7847DD29EE52F9002268FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847DC29EE52F9002268FF /* AppDelegate.swift */; };
 		FB7847DF29EE52F9002268FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847DE29EE52F9002268FF /* SceneDelegate.swift */; };
-		FB7847E129EE52F9002268FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847E029EE52F9002268FF /* ViewController.swift */; };
-		FB7847E429EE52F9002268FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7847E229EE52F9002268FF /* Main.storyboard */; };
 		FB7847E629EE52FB002268FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB7847E529EE52FB002268FF /* Assets.xcassets */; };
 		FB7847E929EE52FB002268FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7847E729EE52FB002268FF /* LaunchScreen.storyboard */; };
 		FB7847F429EE52FB002268FF /* IPAddressInformationSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847F329EE52FB002268FF /* IPAddressInformationSwiftTests.swift */; };
 		FB7847FE29EE52FB002268FF /* IPAddressInformationSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847FD29EE52FB002268FF /* IPAddressInformationSwiftUITests.swift */; };
 		FB78480029EE52FB002268FF /* IPAddressInformationSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847FF29EE52FB002268FF /* IPAddressInformationSwiftUITestsLaunchTests.swift */; };
 		FB78481329EE55FC002268FF /* IPAddressAPI in Frameworks */ = {isa = PBXBuildFile; productRef = FB78481229EE55FC002268FF /* IPAddressAPI */; };
+		FB8BC28629EE884700D270EC /* IPAddressDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28529EE884700D270EC /* IPAddressDetailsViewController.swift */; };
+		FB8BC28929EE8ED400D270EC /* IPAddressDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28829EE8ED400D270EC /* IPAddressDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 		FB7847D929EE52F9002268FF /* IPAddressInformationSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPAddressInformationSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7847DC29EE52F9002268FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB7847DE29EE52F9002268FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB7847E029EE52F9002268FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FB7847E329EE52F9002268FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB7847E529EE52FB002268FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB7847E829EE52FB002268FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB7847EA29EE52FB002268FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		FB7847FD29EE52FB002268FF /* IPAddressInformationSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressInformationSwiftUITests.swift; sourceTree = "<group>"; };
 		FB7847FF29EE52FB002268FF /* IPAddressInformationSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressInformationSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FB78481029EE55B9002268FF /* IPAddressAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = IPAddressAPI; path = ../IPAddressAPI; sourceTree = "<group>"; };
+		FB8BC28529EE884700D270EC /* IPAddressDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressDetailsViewController.swift; sourceTree = "<group>"; };
+		FB8BC28829EE8ED400D270EC /* IPAddressDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +104,9 @@
 		FB7847DB29EE52F9002268FF /* IPAddressInformationSwift */ = {
 			isa = PBXGroup;
 			children = (
+				FB8BC28429EE881700D270EC /* ViewControllers */,
 				FB7847DC29EE52F9002268FF /* AppDelegate.swift */,
 				FB7847DE29EE52F9002268FF /* SceneDelegate.swift */,
-				FB7847E029EE52F9002268FF /* ViewController.swift */,
-				FB7847E229EE52F9002268FF /* Main.storyboard */,
 				FB7847E529EE52FB002268FF /* Assets.xcassets */,
 				FB7847E729EE52FB002268FF /* LaunchScreen.storyboard */,
 				FB7847EA29EE52FB002268FF /* Info.plist */,
@@ -145,6 +144,23 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB8BC28429EE881700D270EC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB8BC28729EE8EBD00D270EC /* IPAddressDetails */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FB8BC28729EE8EBD00D270EC /* IPAddressDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FB8BC28529EE884700D270EC /* IPAddressDetailsViewController.swift */,
+				FB8BC28829EE8ED400D270EC /* IPAddressDetailsViewModel.swift */,
+			);
+			path = IPAddressDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +272,6 @@
 			files = (
 				FB7847E929EE52FB002268FF /* LaunchScreen.storyboard in Resources */,
 				FB7847E629EE52FB002268FF /* Assets.xcassets in Resources */,
-				FB7847E429EE52F9002268FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB7847E129EE52F9002268FF /* ViewController.swift in Sources */,
 				FB7847DD29EE52F9002268FF /* AppDelegate.swift in Sources */,
+				FB8BC28929EE8ED400D270EC /* IPAddressDetailsViewModel.swift in Sources */,
 				FB7847DF29EE52F9002268FF /* SceneDelegate.swift in Sources */,
+				FB8BC28629EE884700D270EC /* IPAddressDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,14 +336,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FB7847E229EE52F9002268FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB7847E329EE52F9002268FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FB7847E729EE52FB002268FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -464,7 +472,7 @@
 				INFOPLIST_FILE = IPAddressInformationSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,7 +499,7 @@
 				INFOPLIST_FILE = IPAddressInformationSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
