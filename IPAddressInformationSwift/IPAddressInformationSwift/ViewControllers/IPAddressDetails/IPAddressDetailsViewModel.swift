@@ -8,6 +8,7 @@
 import Foundation
 import IPAddressAPI
 import Combine
+import MapKit
 
 class IPAddressDetailsViewModel {
     
@@ -77,5 +78,18 @@ class IPAddressDetailsViewModel {
             .regular(NSLocalizedString("In EU", comment: ""), isInEU),
             .location(ipAddressInformation.latitude, ipAddressInformation.longitude)
         ]
+    }
+    
+    /**
+     Opens apple maps and displays the location.
+     
+     - Parameter latitude: Double.
+     - Parameter longitude: Double.
+     */
+    func openMaps(latutude: Double, longitude: Double) {
+        let coordinate = CLLocationCoordinate2DMake(latutude, longitude)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = NSLocalizedString("IP address location", comment: "")
+        mapItem.openInMaps(launchOptions: [:])
     }
 }

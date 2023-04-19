@@ -91,6 +91,21 @@ class IPAddressDetailsViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch self.viewModel.viewState {
+        case .loading, .failedLoading:
+            break
+        case .ipAddressDetails(let displayTypes):
+            let displayType = displayTypes[indexPath.row]
+            switch displayType {
+            case .location(let latitude, let longitude):
+                self.viewModel.openMaps(latutude: latitude, longitude: longitude)
+            default:
+                break
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -133,7 +148,7 @@ class IPAddressDetailsViewController: UITableViewController {
             content.secondaryText = subtitle
         case .location:
             content.text = NSLocalizedString("Location", comment: "")
-            content.secondaryText = NSLocalizedString("Press to show location in maps.", comment: "")
+            content.secondaryText = NSLocalizedString("Select to view in apple maps.", comment: "")
         }
         cell.contentConfiguration = content
         return cell
