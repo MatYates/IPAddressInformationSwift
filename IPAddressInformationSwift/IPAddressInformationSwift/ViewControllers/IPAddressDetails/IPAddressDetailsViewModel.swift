@@ -68,8 +68,8 @@ class IPAddressDetailsViewModel {
     }
     
     enum IPAddressDisplayType {
-        case regular(String, String)
-        case location(Double, Double)
+        case regular(String, String, UIImage?)
+        case location(Double, Double, UIImage?)
     }
     
     /**
@@ -80,23 +80,23 @@ class IPAddressDetailsViewModel {
      */
     func convertToDisplayType(ipAddressInformation: IPAddressInformation) -> [IPAddressDisplayType] {
         return [
-            .regular(Strings.ipAddressTitle, ipAddressInformation.ip),
-            .regular(Strings.cityTitle, ipAddressInformation.city),
-            .regular(Strings.regionTitle, ipAddressInformation.region),
-            .regular(Strings.regionCodeTitle, ipAddressInformation.regionCode),
-            .regular(Strings.countryTitle, ipAddressInformation.countryName),
-            .regular(Strings.countryCodeTitle, ipAddressInformation.country),
-            .regular(Strings.continentCodeTitle, ipAddressInformation.continentCode),
-            .regular(Strings.isInEUTitle, ipAddressInformation.isInEU ? Strings.yes : Strings.no),
-            .regular(Strings.postcodeTitle, ipAddressInformation.postal),
-            .location(ipAddressInformation.latitude, ipAddressInformation.longitude),
-            .regular(Strings.timezoneTitle, ipAddressInformation.timezone),
-            .regular(Strings.utcOffsetTitle, ipAddressInformation.utcOffset),
-            .regular(Strings.countryCallingCodeTitle, ipAddressInformation.countryCallingCode),
-            .regular(Strings.currencyTitle, ipAddressInformation.currency),
-            .regular(Strings.languagesTitle, ipAddressInformation.languages),
-            .regular(Strings.asnTitle, ipAddressInformation.asn),
-            .regular(Strings.organisationTitle, ipAddressInformation.org),
+            .regular(Strings.ipAddressTitle, ipAddressInformation.ip, UIImage(systemName: "globe")),
+            .regular(Strings.cityTitle, ipAddressInformation.city, UIImage(systemName: "building.2")),
+            .regular(Strings.regionTitle, ipAddressInformation.region, UIImage(systemName: "location")),
+            .regular(Strings.regionCodeTitle, ipAddressInformation.regionCode, UIImage(systemName: "location")),
+            .regular(Strings.countryTitle, ipAddressInformation.countryName, UIImage(systemName: "location")),
+            .regular(Strings.countryCodeTitle, ipAddressInformation.country, UIImage(systemName: "location")),
+            .regular(Strings.continentCodeTitle, ipAddressInformation.continentCode, UIImage(systemName: "location")),
+            .regular(Strings.isInEUTitle, ipAddressInformation.isInEU ? Strings.yes : Strings.no, UIImage(systemName: "globe.europe.africa")),
+            .regular(Strings.postcodeTitle, ipAddressInformation.postal, UIImage(systemName: "envelope")),
+            .location(ipAddressInformation.latitude, ipAddressInformation.longitude, UIImage(systemName: "mappin")),
+            .regular(Strings.timezoneTitle, ipAddressInformation.timezone, UIImage(systemName: "clock")),
+            .regular(Strings.utcOffsetTitle, ipAddressInformation.utcOffset, UIImage(systemName: "clock")),
+            .regular(Strings.countryCallingCodeTitle, ipAddressInformation.countryCallingCode, UIImage(systemName: "phone")),
+            .regular(Strings.currencyTitle, ipAddressInformation.currency, UIImage(systemName: "dollarsign")),
+            .regular(Strings.languagesTitle, ipAddressInformation.languages, UIImage(systemName: "person.wave.2")),
+            .regular(Strings.asnTitle, ipAddressInformation.asn, UIImage(systemName: "building")),
+            .regular(Strings.organisationTitle, ipAddressInformation.org, UIImage(systemName: "building")),
         ]
     }
     

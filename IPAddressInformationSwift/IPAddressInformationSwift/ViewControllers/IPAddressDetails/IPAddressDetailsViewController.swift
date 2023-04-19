@@ -98,7 +98,7 @@ class IPAddressDetailsViewController: UITableViewController {
         case .ipAddressDetails(let displayTypes):
             let displayType = displayTypes[indexPath.row]
             switch displayType {
-            case .location(let latitude, let longitude):
+            case .location(let latitude, let longitude, _):
                 self.viewModel.openMaps(latutude: latitude, longitude: longitude)
             default:
                 break
@@ -152,12 +152,14 @@ class IPAddressDetailsViewController: UITableViewController {
         cell.selectionStyle = .none
         var content = cell.defaultContentConfiguration()
         switch displayType {
-        case .regular(let title, let subtitle):
+        case .regular(let title, let subtitle, let image):
             content.text = title
             content.secondaryText = subtitle
-        case .location:
+            content.image = image
+        case .location(_, _, let image):
             content.text = IPAddressDetailsViewModel.Strings.locationTitle
             content.secondaryText = IPAddressDetailsViewModel.Strings.locationDescription
+            content.image = image
         }
         cell.contentConfiguration = content
         return cell
