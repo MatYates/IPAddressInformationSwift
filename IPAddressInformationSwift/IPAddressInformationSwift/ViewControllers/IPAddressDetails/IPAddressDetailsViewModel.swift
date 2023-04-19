@@ -19,9 +19,7 @@ class IPAddressDetailsViewModel {
      
      - Returns: APIManager.
      */
-    lazy var apiManager: APIManager = {
-        return APIManager(session: URLSession.shared)
-    }()
+    var apiManager: APIManager
     
     enum ViewState {
         case loading
@@ -35,6 +33,12 @@ class IPAddressDetailsViewModel {
      - Returns: ViewState.
      */
     @Published var viewState: ViewState = .loading
+    
+    // MARK: - Initialization
+    
+    init(apiManager: APIManager = APIManager(session: URLSession.shared)) {
+        self.apiManager = apiManager
+    }
     
     // MARK: - Load Data
     
