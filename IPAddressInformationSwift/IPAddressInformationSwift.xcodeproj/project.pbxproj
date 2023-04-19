@@ -11,7 +11,6 @@
 		FB7847DF29EE52F9002268FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847DE29EE52F9002268FF /* SceneDelegate.swift */; };
 		FB7847E629EE52FB002268FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB7847E529EE52FB002268FF /* Assets.xcassets */; };
 		FB7847E929EE52FB002268FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7847E729EE52FB002268FF /* LaunchScreen.storyboard */; };
-		FB7847F429EE52FB002268FF /* IPAddressInformationSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847F329EE52FB002268FF /* IPAddressInformationSwiftTests.swift */; };
 		FB7847FE29EE52FB002268FF /* IPAddressInformationSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847FD29EE52FB002268FF /* IPAddressInformationSwiftUITests.swift */; };
 		FB78480029EE52FB002268FF /* IPAddressInformationSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7847FF29EE52FB002268FF /* IPAddressInformationSwiftUITestsLaunchTests.swift */; };
 		FB78481329EE55FC002268FF /* IPAddressAPI in Frameworks */ = {isa = PBXBuildFile; productRef = FB78481229EE55FC002268FF /* IPAddressAPI */; };
@@ -21,6 +20,7 @@
 		FB8BC28E29EE935B00D270EC /* FailedLoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28D29EE935B00D270EC /* FailedLoadingTableViewCell.swift */; };
 		FB8BC29129EE95EA00D270EC /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */; };
 		FB8BC29429EFB4F200D270EC /* UITableViewCellExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC29329EFB4F200D270EC /* UITableViewCellExtensionTests.swift */; };
+		FB8BC29629EFB5A000D270EC /* IPAddressDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC29529EFB5A000D270EC /* IPAddressDetailsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		FB7847E829EE52FB002268FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB7847EA29EE52FB002268FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB7847EF29EE52FB002268FF /* IPAddressInformationSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPAddressInformationSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB7847F329EE52FB002268FF /* IPAddressInformationSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressInformationSwiftTests.swift; sourceTree = "<group>"; };
 		FB7847F929EE52FB002268FF /* IPAddressInformationSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPAddressInformationSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7847FD29EE52FB002268FF /* IPAddressInformationSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressInformationSwiftUITests.swift; sourceTree = "<group>"; };
 		FB7847FF29EE52FB002268FF /* IPAddressInformationSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressInformationSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		FB8BC28D29EE935B00D270EC /* FailedLoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedLoadingTableViewCell.swift; sourceTree = "<group>"; };
 		FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		FB8BC29329EFB4F200D270EC /* UITableViewCellExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensionTests.swift; sourceTree = "<group>"; };
+		FB8BC29529EFB5A000D270EC /* IPAddressDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressDetailsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,8 @@
 		FB7847F229EE52FB002268FF /* IPAddressInformationSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				FB8BC29729EFB5A400D270EC /* ViewModel */,
 				FB8BC29229EFB4D200D270EC /* Extensions */,
-				FB7847F329EE52FB002268FF /* IPAddressInformationSwiftTests.swift */,
 			);
 			path = IPAddressInformationSwiftTests;
 			sourceTree = "<group>";
@@ -197,6 +197,14 @@
 				FB8BC29329EFB4F200D270EC /* UITableViewCellExtensionTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB8BC29729EFB5A400D270EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB8BC29529EFB5A000D270EC /* IPAddressDetailsViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,8 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB7847F429EE52FB002268FF /* IPAddressInformationSwiftTests.swift in Sources */,
 				FB8BC29429EFB4F200D270EC /* UITableViewCellExtensionTests.swift in Sources */,
+				FB8BC29629EFB5A000D270EC /* IPAddressDetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
