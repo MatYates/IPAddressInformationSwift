@@ -26,6 +26,13 @@ class IPAddressDetailsViewController: UITableViewController {
      */
     private var cancellables = Set<AnyCancellable>()
     
+    /**
+     Reuse identifier for the display type table view cell.
+     
+     - Returns: String.
+     */
+    private let displayTypeCellReuseIdentifier = "DisplayTypeCell"
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -37,6 +44,7 @@ class IPAddressDetailsViewController: UITableViewController {
     // MARK: - Setup
     
     private func setup() {
+        self.title = NSLocalizedString("IP Address Details", comment: "")
         self.tableView.separatorStyle = .none
         self.registerTableViewCells()
         self.viewModel.$viewState
@@ -53,6 +61,7 @@ class IPAddressDetailsViewController: UITableViewController {
     private func registerTableViewCells() {
         self.tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
         self.tableView.register(FailedLoadingTableViewCell.self, forCellReuseIdentifier: FailedLoadingTableViewCell.identifier)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.displayTypeCellReuseIdentifier)
     }
 
     // MARK: - Table view data source
@@ -65,8 +74,8 @@ class IPAddressDetailsViewController: UITableViewController {
         switch self.viewModel.viewState {
         case .failedLoading, .loading:
             return 1
-        case .ipAddressDetails:
-            return 1
+        case .ipAddressDetails(let displayTypes):
+            return displayTypes.count
         }
     }
 
@@ -76,8 +85,9 @@ class IPAddressDetailsViewController: UITableViewController {
             return self.setupLoadingTableViewCell(indexPath: indexPath)
         case .failedLoading:
             return self.setupFailedLoadingTableViewCell(indexPath: indexPath)
-        default:
-            return UITableViewCell()
+        case .ipAddressDetails(let displayTypes):
+            let displayType = displayTypes[indexPath.row]
+            return self.setupDisplayTypesTableViewCell(indexPath: indexPath, displayType: displayType)
         }
     }
     
@@ -110,6 +120,22 @@ class IPAddressDetailsViewController: UITableViewController {
                 print("Retry button pressed.")
                 self?.viewModel.loadIPAddressInformationTask()
             }.store(in: &self.cancellables)
+        return cell
+    }
+    
+    private func setupDisplayTypesTableViewCell(indexPath: IndexPath, displayType: IPAddressDetailsViewModel.IPAddressDisplayType) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: self.displayTypeCellReuseIdentifier, for: indexPath)
+        cell.selectionStyle = .none
+        var content = cell.defaultContentConfiguration()
+        switch displayType {
+        case .regular(let title, let subtitle):
+            content.text = title
+            content.secondaryText = subtitle
+        case .location:
+            content.text = NSLocalizedString("Location", comment: "")
+            content.secondaryText = NSLocalizedString("Press to show location in maps.", comment: "")
+        }
+        cell.contentConfiguration = content
         return cell
     }
 }

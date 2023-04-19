@@ -14,126 +14,126 @@ public struct IPAddressInformation: Codable {
      
      - Returns: String.
      */
-    let ip: String
+    public let ip: String
     
     /**
      The city of the IP Address.
      
      - Returns: String.
      */
-    let city: String
+    public let city: String
     
     /**
      The region of the IP Address.
      
      - Returns: String.
      */
-    let region: String
+    public let region: String
     
     /**
      The region code of the IP Address.
      
      - Returns: String.
      */
-    let regionCode: String
+    public let regionCode: String
     
     /**
      The country code of the IP Address.
      
      - Returns: String.
      */
-    let country: String
+    public let country: String
     
     /**
      The country name of the IP Address.
      
      - Returns: String.
      */
-    let countryName: String
+    public let countryName: String
     
     /**
      The continent code of the IP Address.
      
      - Returns: String.
      */
-    let continentCode: String
+    public let continentCode: String
     
     /**
      Determines if the IP address is in the Europena Union.
      
      - Returns: Bool.
      */
-    let isInEU: Bool
+    public let isInEU: Bool
     
     /**
      The postcode of the IP Address.
      
      - Returns: String.
      */
-    let postal: String
+    public let postal: String
     
     /**
      The lattitude of the IP Address.
      
      - Returns: Double.
      */
-    let latitude: Double
+    public let latitude: Double
     
     /**
      The longitude of the IP Address.
      
      - Returns: Double.
      */
-    let longitude: Double
+    public let longitude: Double
     
     /**
      The timezone of the IP Address.
      
      - Returns: String.
      */
-    let timezone: String
+    public let timezone: String
     
     /**
      The UTC offset of the IP Address.
      
      - Returns: String.
      */
-    let utcOffset: String
+    public let utcOffset: String
     
     /**
      The country calling code of the IP Address.
      
      - Returns: String.
      */
-    let countryCallingCode: String
+    public let countryCallingCode: String
     
     /**
      The currency of the IP Address.
      
      - Returns: String.
      */
-    let currency: String
+    public let currency: String
     
     /**
      The languages of the IP Address.
      
      - Returns: String.
      */
-    let languages: String
+    public let languages: String
     
     /**
      The Autonomous System Number of the IP Address.
      
      - Returns: String.
      */
-    let asn: String
+    public let asn: String
     
     /**
      The org of the IP Address.
      
      - Returns: String.
      */
-    let org: String
+    public let org: String
     
     enum CodingKeys: String, CodingKey {
         case ip

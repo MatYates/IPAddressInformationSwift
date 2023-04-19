@@ -25,7 +25,7 @@ class IPAddressDetailsViewModel {
     enum ViewState {
         case loading
         case failedLoading
-        case ipAddressDetails(IPAddressInformation)
+        case ipAddressDetails([IPAddressDisplayType])
     }
     
     /**
@@ -54,10 +54,28 @@ class IPAddressDetailsViewModel {
             self.viewState = .loading
             let ipAddressDetails = try await self.apiManager.getUsersIPDetails()
             print("Recieved IP Address details: \(ipAddressDetails)")
-            self.viewState = .ipAddressDetails(ipAddressDetails)
+            let displayTypes = self.convertToDisplayType(ipAddressInformation: ipAddressDetails)
+            self.viewState = .ipAddressDetails(displayTypes)
         } catch {
             print("Error fetching IP Address Information: \(error.localizedDescription)")
             self.viewState = .failedLoading
         }
+    }
+    
+    enum IPAddressDisplayType {
+        case regular(String, String)
+        case location(Double, Double)
+    }
+    
+    func convertToDisplayType(ipAddressInformation: IPAddressInformation) -> [IPAddressDisplayType] {
+        let isInEU = ipAddressInformation.isInEU ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: "")
+        return [
+            .regular(NSLocalizedString("IP Address", comment: ""), ipAddressInformation.ip),
+            .regular(NSLocalizedString("City", comment: ""), ipAddressInformation.city),
+            .regular(NSLocalizedString("Region", comment: ""), ipAddressInformation.region),
+            .regular(NSLocalizedString("Country", comment: ""), ipAddressInformation.countryName),
+            .regular(NSLocalizedString("In EU", comment: ""), isInEU),
+            .location(ipAddressInformation.latitude, ipAddressInformation.longitude)
+        ]
     }
 }
