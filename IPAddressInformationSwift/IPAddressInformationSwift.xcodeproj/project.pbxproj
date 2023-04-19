@@ -20,6 +20,7 @@
 		FB8BC28C29EE934A00D270EC /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28B29EE934A00D270EC /* LoadingTableViewCell.swift */; };
 		FB8BC28E29EE935B00D270EC /* FailedLoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC28D29EE935B00D270EC /* FailedLoadingTableViewCell.swift */; };
 		FB8BC29129EE95EA00D270EC /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */; };
+		FB8BC29429EFB4F200D270EC /* UITableViewCellExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BC29329EFB4F200D270EC /* UITableViewCellExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FB8BC28B29EE934A00D270EC /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		FB8BC28D29EE935B00D270EC /* FailedLoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedLoadingTableViewCell.swift; sourceTree = "<group>"; };
 		FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		FB8BC29329EFB4F200D270EC /* UITableViewCellExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		FB7847F229EE52FB002268FF /* IPAddressInformationSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				FB8BC29229EFB4D200D270EC /* Extensions */,
 				FB7847F329EE52FB002268FF /* IPAddressInformationSwiftTests.swift */,
 			);
 			path = IPAddressInformationSwiftTests;
@@ -184,6 +187,14 @@
 			isa = PBXGroup;
 			children = (
 				FB8BC29029EE95EA00D270EC /* UITableViewCell+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB8BC29229EFB4D200D270EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB8BC29329EFB4F200D270EC /* UITableViewCellExtensionTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB7847F429EE52FB002268FF /* IPAddressInformationSwiftTests.swift in Sources */,
+				FB8BC29429EFB4F200D270EC /* UITableViewCellExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
