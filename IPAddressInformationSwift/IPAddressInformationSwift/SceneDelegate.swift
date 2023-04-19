@@ -18,7 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: IPAddressDetailsViewController())
+        let navigationController = UINavigationController(rootViewController: IPAddressDetailsViewController())
+        navigationController.navigationBar.prefersLargeTitles = true
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
     }
