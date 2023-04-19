@@ -64,7 +64,7 @@ class IPAddressDetailsViewController: UITableViewController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.displayTypeCellReuseIdentifier)
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view data source / delegate
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -116,6 +116,7 @@ class IPAddressDetailsViewController: UITableViewController {
      Sets up the loading table view cell.
      
      - Parameter indexPath: IndexPath.
+     - Returns: UITableViewCell.
      */
     private func setupLoadingTableViewCell(indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.identifier) as! LoadingTableViewCell
@@ -126,6 +127,7 @@ class IPAddressDetailsViewController: UITableViewController {
      Sets up the loading table view cell.
      
      - Parameter indexPath: IndexPath.
+     - Returns: UITableViewCell.
      */
     private func setupFailedLoadingTableViewCell(indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: FailedLoadingTableViewCell.identifier) as! FailedLoadingTableViewCell
@@ -138,6 +140,13 @@ class IPAddressDetailsViewController: UITableViewController {
         return cell
     }
     
+    /**
+     Sets up a display type table view cell.
+     
+     - Parameter indexPath: IndexPath.
+     - Parameter displayType: IPAddressDisplayType.
+     - Returns: UITableViewCell.
+     */
     private func setupDisplayTypesTableViewCell(indexPath: IndexPath, displayType: IPAddressDetailsViewModel.IPAddressDisplayType) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: self.displayTypeCellReuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
