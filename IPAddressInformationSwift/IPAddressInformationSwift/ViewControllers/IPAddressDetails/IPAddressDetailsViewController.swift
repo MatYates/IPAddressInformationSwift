@@ -44,7 +44,7 @@ class IPAddressDetailsViewController: UITableViewController {
     // MARK: - Setup
     
     private func setup() {
-        self.title = NSLocalizedString("IP Address Details", comment: "")
+        self.title = IPAddressDetailsViewModel.Strings.title
         self.tableView.separatorStyle = .none
         self.registerTableViewCells()
         self.viewModel.$viewState
@@ -147,8 +147,8 @@ class IPAddressDetailsViewController: UITableViewController {
             content.text = title
             content.secondaryText = subtitle
         case .location:
-            content.text = NSLocalizedString("Location", comment: "")
-            content.secondaryText = NSLocalizedString("Select to view in apple maps.", comment: "")
+            content.text = IPAddressDetailsViewModel.Strings.locationTitle
+            content.secondaryText = IPAddressDetailsViewModel.Strings.locationDescription
         }
         cell.contentConfiguration = content
         return cell

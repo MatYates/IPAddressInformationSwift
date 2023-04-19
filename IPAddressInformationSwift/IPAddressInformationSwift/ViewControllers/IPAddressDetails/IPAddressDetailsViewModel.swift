@@ -69,13 +69,12 @@ class IPAddressDetailsViewModel {
     }
     
     func convertToDisplayType(ipAddressInformation: IPAddressInformation) -> [IPAddressDisplayType] {
-        let isInEU = ipAddressInformation.isInEU ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: "")
         return [
-            .regular(NSLocalizedString("IP Address", comment: ""), ipAddressInformation.ip),
-            .regular(NSLocalizedString("City", comment: ""), ipAddressInformation.city),
-            .regular(NSLocalizedString("Region", comment: ""), ipAddressInformation.region),
-            .regular(NSLocalizedString("Country", comment: ""), ipAddressInformation.countryName),
-            .regular(NSLocalizedString("In EU", comment: ""), isInEU),
+            .regular(Strings.ipAddressTitle, ipAddressInformation.ip),
+            .regular(Strings.cityTitle, ipAddressInformation.city),
+            .regular(Strings.regionTitle, ipAddressInformation.region),
+            .regular(Strings.countryTitle, ipAddressInformation.countryName),
+            .regular(Strings.isInEUTitle, ipAddressInformation.isInEU ? Strings.yes : Strings.no),
             .location(ipAddressInformation.latitude, ipAddressInformation.longitude)
         ]
     }
@@ -89,7 +88,25 @@ class IPAddressDetailsViewModel {
     func openMaps(latutude: Double, longitude: Double) {
         let coordinate = CLLocationCoordinate2DMake(latutude, longitude)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = NSLocalizedString("IP address location", comment: "")
+        mapItem.name = Strings.appleMapsTitle
         mapItem.openInMaps(launchOptions: [:])
+    }
+}
+
+extension IPAddressDetailsViewModel {
+    
+    struct Strings {
+        
+        static let title = NSLocalizedString("IP Address Details", comment: "")
+        static let locationTitle = NSLocalizedString("Location", comment: "")
+        static let locationDescription = NSLocalizedString("Select to view in apple maps.", comment: "")
+        static let appleMapsTitle = NSLocalizedString("IP address location", comment: "")
+        static let yes = NSLocalizedString("Yes", comment: "")
+        static let no = NSLocalizedString("No", comment: "")
+        static let ipAddressTitle = NSLocalizedString("IP Address", comment: "")
+        static let cityTitle = NSLocalizedString("City", comment: "")
+        static let regionTitle = NSLocalizedString("Region", comment: "")
+        static let countryTitle = NSLocalizedString("Country", comment: "")
+        static let isInEUTitle = NSLocalizedString("In EU", comment: "")
     }
 }
