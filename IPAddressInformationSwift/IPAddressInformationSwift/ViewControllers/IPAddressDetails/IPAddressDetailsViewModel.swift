@@ -79,9 +79,20 @@ class IPAddressDetailsViewModel {
             .regular(Strings.ipAddressTitle, ipAddressInformation.ip),
             .regular(Strings.cityTitle, ipAddressInformation.city),
             .regular(Strings.regionTitle, ipAddressInformation.region),
+            .regular(Strings.regionCodeTitle, ipAddressInformation.regionCode),
             .regular(Strings.countryTitle, ipAddressInformation.countryName),
+            .regular(Strings.countryCodeTitle, ipAddressInformation.country),
+            .regular(Strings.continentCodeTitle, ipAddressInformation.continentCode),
             .regular(Strings.isInEUTitle, ipAddressInformation.isInEU ? Strings.yes : Strings.no),
-            .location(ipAddressInformation.latitude, ipAddressInformation.longitude)
+            .regular(Strings.postcodeTitle, ipAddressInformation.postal),
+            .location(ipAddressInformation.latitude, ipAddressInformation.longitude),
+            .regular(Strings.timezoneTitle, ipAddressInformation.timezone),
+            .regular(Strings.utcOffsetTitle, ipAddressInformation.utcOffset),
+            .regular(Strings.countryCallingCodeTitle, ipAddressInformation.countryCallingCode),
+            .regular(Strings.currencyTitle, ipAddressInformation.currency),
+            .regular(Strings.languagesTitle, ipAddressInformation.languages),
+            .regular(Strings.asnTitle, ipAddressInformation.asn),
+            .regular(Strings.organisationTitle, ipAddressInformation.org),
         ]
     }
     
@@ -112,7 +123,18 @@ extension IPAddressDetailsViewModel {
         static let ipAddressTitle = NSLocalizedString("IP Address", comment: "")
         static let cityTitle = NSLocalizedString("City", comment: "")
         static let regionTitle = NSLocalizedString("Region", comment: "")
+        static let regionCodeTitle = NSLocalizedString("Region code", comment: "")
         static let countryTitle = NSLocalizedString("Country", comment: "")
+        static let countryCodeTitle = NSLocalizedString("Country code", comment: "")
+        static let continentCodeTitle = NSLocalizedString("Continent code", comment: "")
+        static let postcodeTitle = NSLocalizedString("Postcode", comment: "")
         static let isInEUTitle = NSLocalizedString("In EU", comment: "")
+        static let timezoneTitle = NSLocalizedString("Timezone", comment: "")
+        static let utcOffsetTitle = NSLocalizedString("UTC offset", comment: "")
+        static let countryCallingCodeTitle = NSLocalizedString("Country calling code", comment: "")
+        static let currencyTitle = NSLocalizedString("Currency", comment: "")
+        static let languagesTitle = NSLocalizedString("Languages", comment: "")
+        static let asnTitle = NSLocalizedString("ASN", comment: "")
+        static let organisationTitle = NSLocalizedString("Organisation", comment: "")
     }
 }
