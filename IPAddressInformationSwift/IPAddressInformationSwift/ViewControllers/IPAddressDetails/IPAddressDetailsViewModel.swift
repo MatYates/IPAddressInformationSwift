@@ -68,6 +68,12 @@ class IPAddressDetailsViewModel {
         case location(Double, Double)
     }
     
+    /**
+     Converts the IPAddressInformation in to an array of IPAddressDisplayType so it can be displayed in the table view.
+     
+     - Parameter ipAddressInformation: IPAddressInformation.
+     - Returns: Array of IPAddressDisplayType.
+     */
     func convertToDisplayType(ipAddressInformation: IPAddressInformation) -> [IPAddressDisplayType] {
         return [
             .regular(Strings.ipAddressTitle, ipAddressInformation.ip),
