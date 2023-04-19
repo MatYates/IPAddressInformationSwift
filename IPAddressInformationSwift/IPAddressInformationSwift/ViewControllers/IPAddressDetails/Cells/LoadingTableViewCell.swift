@@ -9,29 +9,11 @@ import UIKit
 
 class LoadingTableViewCell: UITableViewCell {
 
-    // MARK: - Properties
-    
-    /**
-     Title to be displayed.
-     
-     - Returns: String.
-     */
-    var title: String? {
-        didSet {
-            self.titleLabel.text = self.title
-        }
-    }
-    
     // MARK: - UI
     
-    /**
-     Label to display the title text.
-     
-     - Returns: UILabel.
-     */
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = self.title
+        label.text = NSLocalizedString("Loading IP address details", comment: "")
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = .placeholderText
@@ -81,13 +63,5 @@ class LoadingTableViewCell: UITableViewCell {
                 self.contentView.trailingAnchor.constraint(greaterThanOrEqualTo: self.titleLabel.trailingAnchor, constant: 12),
                 self.contentView.bottomAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 12),
                 self.titleLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)]
-    }
-    
-    // MARK: - Overrides
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        self.title = nil
     }
 }

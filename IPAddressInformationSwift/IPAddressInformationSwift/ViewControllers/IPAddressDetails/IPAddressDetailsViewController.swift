@@ -52,6 +52,7 @@ class IPAddressDetailsViewController: UITableViewController {
      */
     private func registerTableViewCells() {
         self.tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
+        self.tableView.register(FailedLoadingTableViewCell.self, forCellReuseIdentifier: FailedLoadingTableViewCell.identifier)
     }
 
     // MARK: - Table view data source
@@ -73,8 +74,10 @@ class IPAddressDetailsViewController: UITableViewController {
         switch self.viewModel.viewState {
         case .loading:
             return self.setupLoadingTableViewCell(indexPath: indexPath)
+        case .failedLoading:
+            return self.setupFailedLoadingTableViewCell(indexPath: indexPath)
         default:
-            return self.setupLoadingTableViewCell(indexPath: indexPath)
+            return UITableViewCell()
         }
     }
     
@@ -91,7 +94,22 @@ class IPAddressDetailsViewController: UITableViewController {
      */
     private func setupLoadingTableViewCell(indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.identifier) as! LoadingTableViewCell
-        cell.title = "Loading IP address details"
+        return cell
+    }
+    
+    /**
+     Sets up the loading table view cell.
+     
+     - Parameter indexPath: IndexPath.
+     */
+    private func setupFailedLoadingTableViewCell(indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: FailedLoadingTableViewCell.identifier) as! FailedLoadingTableViewCell
+        cell.retryButtonPressedEvent
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                print("Retry button pressed.")
+                self?.viewModel.loadIPAddressInformationTask()
+            }.store(in: &self.cancellables)
         return cell
     }
 }
