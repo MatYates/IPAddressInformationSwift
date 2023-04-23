@@ -11,4 +11,4 @@ The Skills i am hoping to display any potential employers are:
 - Writing libraries and packages to be used in multiple projects
 - Writing reusable, testable, and maintainable code
 
-This is currently in progress and i am writing this inbetween looking for a new position.
+This is currently in progress and i am writing this inbetween looking for a new position
